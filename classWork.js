@@ -27,7 +27,7 @@ function pushToArray(base, number ){
     console.log('the array is full');
    }
    else{
-     base = 1;
+     base = base + 1;
      return base
      console.log(base);
    }
@@ -35,21 +35,27 @@ function pushToArray(base, number ){
 
 pushToArray()
 
-function popToArray(){
+function popFromArray(){
     if(size-base===1){
-    console.log('array is empty can not push');
+    console.log('array is empty can not pop');
     }else{
-        console.log('can be pushed to array');
+        console.log('can be poped into array');
+        base  = base - 1;
+        return base
+        console.log(base);
     }
 }
 
-popToArray()
+popFromArray()
 
 function clearArray(){
-    if(size-base===1){
+    if(size-base === 1){
     console.log('array is empty can not clear');
     }else{
-        console.log('can clear the array');
+    console.log('the array has been cleared');
+    size = size - size;
+    return size
+    console.log(size);
     }
 }
 
@@ -60,6 +66,8 @@ function searchArray(){
     console.log('array is empty can not search');
     }else{
         console.log('can search from the array');
+        size = size - size[whatYouWantToSearch];
+        return size;
     }
 }
 
@@ -70,9 +78,14 @@ function pickFromArray(){
     console.log('array is empty can not pick');
     }else{
         console.log('can pick from the array');
+        
+        size = size - size[whatYouWantToRemove];
+        return size
     }
 }
 
+//quick check
+stack = [ ]
 class Stack {
   constructor() {
     this.stack = [];
@@ -121,5 +134,3 @@ console.log(myStack.pop()); // Output: "katana"
 console.log(myStack.isEmpty()); // Output: false
 myStack.clear();
 console.log(myStack.isEmpty()); // Output: true
-
-// Second
